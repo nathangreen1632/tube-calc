@@ -1,0 +1,51 @@
+body {
+  background-image: url("https://i2-prod.mirror.co.uk/incoming/article28928969.ece/ALTERNATES/s1200d/0_Gants-Hill-Station.jpg");
+  background-size: cover;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: hsl(223, 74%, 48%);
+  color: hsl(0, 0%, 100%);
+  padding: 7px 34px;
+  font-size: 22px;
+  cursor: pointer;
+  border: 3px solid black;
+  border-radius: 12px;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.btn:hover {
+  filter: brightness(75%); /* Dims the button */
+}
+
+
+#increment-btn {
+  background: darkred;
+}
+
+#save-btn {
+  background: darkgreen;
+}
+
+#clear-btn {
+  background: darkblue;
+}
+
+.btn:hover {
+  cursor: pointer;
+
+}
