@@ -25,11 +25,11 @@ h2 {
   cursor: pointer;
   border: 3px solid black;
   border-radius: 12px;
-  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  transition: all 0.2s eases-in-out; 
 }
 
 .btn:hover {
-  filter: brightness(75%); /* Dims the button */
+  filter: brightness(60%); 
 }
 
 
@@ -45,7 +45,35 @@ h2 {
   background: darkblue;
 }
 
-.btn:hover {
-  cursor: pointer;
+@media screen and (max-width: 968px) {
+  h2 {
+    font-size: 40px;
+  }
+  .btn {
+    font-size: 20px;
+    padding: 5px 30px;
+  }
+  
+}
 
+@media screen and (max-width: 600px) {
+  h2 {
+    font-size: 30px;
+  }
+  .btn {
+    font-size: 18px;
+    padding: 5px 20px;
+  }
+  
+}
+
+@media screen and (max-width: 400px) {
+  h2 {
+    font-size: 20px;
+  }
+  .btn {
+    font-size: 16px;
+    padding: 5px 20px;
+  }
+  
 }
