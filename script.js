@@ -14,7 +14,7 @@ function save() {
     count = 0
 }
 
-function clear() {
+function clearCount() {
   count = 0; 
   countEl.textContent = count;
   saveEl.textContent = 'Previous entries: ';
