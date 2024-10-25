@@ -1,21 +1,56 @@
-let saveEl = document.getElementById("save-el")
-let countEl = document.getElementById("count-el")
-let count = 0
+class Counter {
+  constructor(initialCount = 0) {
+    this.previousEntriesDisplay = document.getElementById("displayed-entries");
+    this.mainCounterDisplay = document.getElementById("main-counter");
+    this.count = initialCount;
+    this.countArray = [];
+    this.displayCounters(); // Initialize displays on construction
+  }
 
-function increment() {
-    count += 1
-    countEl.textContent = count
+  incrementCounter() {
+    this.count++;
+    this.displayCounters();
+  }
+
+  saveCounter() {
+    this.countArray.push(this.count);
+    this.count = 0;
+    this.displayCounters();
+  }
+
+  clearCounter() {
+    this.count = 0;
+    this.countArray = [];
+    this.displayCounters();
+  }
+
+  displayCounters() {
+    this.displayMainCounter();
+    this.displayCounterEntries();
+  }
+
+  displayMainCounter() {
+    if (this.mainCounterDisplay) {
+      this.mainCounterDisplay.innerText = this.count.toString();
+    }
+  }
+
+  displayCounterEntries() {
+    if (!this.previousEntriesDisplay) return;
+
+    if (!this.countArray.length) {
+      this.previousEntriesDisplay.innerText = '';
+      return;
+    }
+
+    const label = this.countArray.length === 1 ? 'Previous Entry:' : 'Previous Entries:';
+    this.previousEntriesDisplay.innerText = `${label} ${this.countArray.join(' - ')}`;
+  }
 }
 
-function save() {
-    let countStr = count + " - "
-    saveEl.textContent += countStr
-    countEl.textContent = 0
-    count = 0
-}
+// Instantiation and event handler bindings
+const counter = new Counter(0);
 
-function clearCount() {
-  count = 0; 
-  countEl.textContent = count;
-  saveEl.textContent = 'Previous entries: ';
-}
+const incrementCounter = () => counter.incrementCounter();
+const saveCounter = () => counter.saveCounter();
+const clearCounter = () => counter.clearCounter();
